@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "author": "jingchu2018 <35134134+jingchu2018@users.noreply.github.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.8",
+    "umi": "^4.1.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^5.0.3"
+  }
+}

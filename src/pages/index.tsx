@@ -2,6 +2,7 @@ import ConfirmButton from "@/components/ConfirmButton";
 import Time from "@/components/Time";
 import Dialog from "@/components/Dialog";
 import styled from "styled-components";
+import FromToContent from "@/components/FromToContent";
 export default function HomePage() {
   const styleColor = "white";
   const bottomButtonWhiteProps = {
@@ -16,9 +17,16 @@ export default function HomePage() {
     fontColor: styleColor === "white" ? "rgb(56,53,60)" : "rgb(226,232,238)",
     fontSize: 18,
   };
-
+  const fromToData = {
+    fromTitle: "sds",
+    toTitle: "dd",
+    styleColor: "white",
+    fromContent: "ddddd",
+    toContent: "ddd",
+  };
   const content = (
     <>
+      <FromToContent {...fromToData}></FromToContent>
       <Time {...TimeData}></Time>
       <ConfirmButton {...bottomButtonWhiteProps}></ConfirmButton>
     </>

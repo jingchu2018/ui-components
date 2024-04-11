@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 // confirm button props
-export type ButtonProps = {
+export type ConfirmButtonProps = {
   //confirm button text
   confirmText: string;
   // cancel button text
@@ -10,7 +10,7 @@ export type ButtonProps = {
   styleColor: string;
 };
 
-export default function ConfirmButton(buttonProp: ButtonProps) {
+export default function ConfirmButton(buttonProp: ConfirmButtonProps) {
   const [fontWeight, setFontWeight] = useState(true); // cick event will use ,but now it isn't inuse
   const defaultProps = {
     confirmText: "Transfer",

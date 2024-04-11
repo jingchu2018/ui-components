@@ -11,7 +11,11 @@ export type DialogProps = {
   content?: any;
   isOpen?: boolean;
 };
-
+/**
+ *
+ * @param dialogProp
+ * @returns
+ */
 export default function Dialog(dialogProp: DialogProps) {
   const defaultProps = {
     styleColor: "white", // black or white ,todo  other color

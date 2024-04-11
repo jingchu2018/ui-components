@@ -15,7 +15,11 @@ export type FromToProps = {
   styleColor: string;
   //no need function
 };
-
+/**
+ *
+ * @param fromToProp
+ * @returns
+ */
 export default function FromTo(fromToProp: FromToProps) {
   const {
     fromTitle,

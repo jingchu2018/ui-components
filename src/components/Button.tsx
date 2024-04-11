@@ -8,7 +8,11 @@ export type ButtonProps = {
   fontColor: string;
   //no need function
 };
-
+/**
+ *
+ * @param buttonProp
+ * @returns
+ */
 export default function Button(buttonProp: ButtonProps) {
   const defaultProps = {
     buttonText: "Confirm",

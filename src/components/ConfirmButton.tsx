@@ -9,7 +9,11 @@ export type ConfirmButtonProps = {
   // Theme color: black, or white
   styleColor: string;
 };
-
+/**
+ *
+ * @param buttonProp
+ * @returns
+ */
 export default function ConfirmButton(buttonProp: ConfirmButtonProps) {
   const [fontWeight, setFontWeight] = useState(true); // cick event will use ,but now it isn't inuse
   const defaultProps = {

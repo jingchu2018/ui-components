@@ -12,7 +12,11 @@ export type TimeProps = {
   fontSize?: number;
   //no need function
 };
-
+/**
+ *
+ * @param timeProp
+ * @returns
+ */
 export default function Time(timeProp: TimeProps) {
   const defaultProps = {
     timeText: "0",

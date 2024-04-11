@@ -11,7 +11,11 @@ export type InputContentsProps = {
   styleColor: string;
   //no need function
 };
-
+/**
+ *
+ * @param inputContentsProp
+ * @returns
+ */
 export default function InputContents(inputContentsProp: InputContentsProps) {
   const defaultProps = {
     styleColor: "white", // black or white ,todo  other color

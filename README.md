@@ -30,6 +30,8 @@ Files you can see:
 │   │   ├── from-white.png
 │   │   ├── pen-black.png
 │   │   ├── pen-white.png
+│   │   ├── select-amount-black.png
+│   │   ├── select-amount-white.png
 │   │   ├── time-black.png
 │   │   ├── time-white.png
 │   │   ├── to-black.png

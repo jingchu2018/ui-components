@@ -18,7 +18,7 @@ export default function Button(buttonProp: ButtonProps) {
     buttonText: "Confirm",
     styleColor: "white", // black or white ,todo  other color
     fontWeight: true,
-    fontSize: 28,
+    fontSize: 15,
     fontColor: "black",
   };
   const {
@@ -35,7 +35,7 @@ export default function Button(buttonProp: ButtonProps) {
     font-size: ${fontSize}px;
     text-align: center;
     width: 100%;
-    height: 110px;
+    height: 55px;
     font-weight: ${fontWeight ? "bold" : "normal"};
     border: none;
     border-radius: 8px;

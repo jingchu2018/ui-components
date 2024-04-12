@@ -19,8 +19,8 @@ export type DialogProps = {
 export default function Dialog(dialogProp: DialogProps) {
   const defaultProps = {
     styleColor: "white", // black or white ,todo  other color
-    fontSize: 28,
-    width: 500,
+    fontSize: 16,
+    width: 400,
     isOpen: true,
   };
   const {
@@ -40,7 +40,7 @@ export default function Dialog(dialogProp: DialogProps) {
       ? "rgb(182, 182, 182)"
       : "rgb(105,108,109)"};
     border-radius: 15px;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 0px 20px;
     visibility: ${isOpen ? "visible" : "hidden"};
     min-height: 90px;
     position: relative;
@@ -55,6 +55,8 @@ export default function Dialog(dialogProp: DialogProps) {
     color: ${styleColor === "white" ? "rgb(44,50,55)" : "rgb(236,241,247)"};
     font-size: ${fontSize}px;
     text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
   `;
 
   const Close = styled.img`
@@ -63,7 +65,6 @@ export default function Dialog(dialogProp: DialogProps) {
     right: 20px;
     top: 20px;
   `;
-  console.log(content);
 
   // close imgsrc
   const closeSrc = styleColor === "white" ? closeWhitePng : closeBlackPng;
@@ -71,7 +72,7 @@ export default function Dialog(dialogProp: DialogProps) {
     <Dialog>
       <SpanWrapper>
         <Title>{title}</Title>
-        <Close src={closeSrc} width={50} height={50}></Close>
+        <Close src={closeSrc} width={20} height={20}></Close>
       </SpanWrapper>
       {content}
     </Dialog>

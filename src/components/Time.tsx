@@ -5,7 +5,7 @@ import blackTimeSrc from "../assets/time-black.png";
 
 //props
 export type TimeProps = {
-  timeText: string;
+  timeText: number; //how much time left after fist
   timeUnit: string;
   fontColor?: string;
   styleColor: string; // Theme color
@@ -19,11 +19,11 @@ export type TimeProps = {
  */
 export default function Time(timeProp: TimeProps) {
   const defaultProps = {
-    timeText: "0",
+    timeText: 0,
     timeUnit: "seconds",
     styleColor: "white",
     fontColor: "black",
-    fontSize: 18,
+    fontSize: 12,
   };
   const {
     timeText = defaultProps.timeText,
@@ -34,18 +34,17 @@ export default function Time(timeProp: TimeProps) {
   } = timeProp;
 
   const Wrapper = styled.div`
-    background-color: ${styleColor === "white" ? "rgb(237,242,239)" : "black"};
+    background-color: ${styleColor === "white" ? "rgb(237,242,248)" : "black"};
     color: ${fontColor};
     font-size: ${fontSize}px;
     text-align: left;
     width: 100%;
-    height: 65px;
+    margin-bottom: 20px;
+    height: 35px;
     display: flex;
     align-items: center;
     border: none;
-    vertical-align: middle;
     border-radius: 8px;
-    padding-left: 10px;
   `;
   const TimeShow = styled.span`
     font-weight: bold;
@@ -58,7 +57,12 @@ export default function Time(timeProp: TimeProps) {
 
   return (
     <Wrapper>
-      <img src={imgSrc} width={36} height={36} />
+      <img
+        style={{ paddingLeft: "10px" }}
+        src={imgSrc}
+        width={18}
+        height={18}
+      />
       <SpanWrapper>
         Esimated time:
         <TimeShow>

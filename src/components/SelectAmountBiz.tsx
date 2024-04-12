@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import fromWhiteIcon from "../assets/left-white.png";
-import fromBlackIcon from "../assets/left-black.png";
+import fromWhiteIcon from "../assets/select-amount-white.png";
+import fromBlackIcon from "../assets/select-amount-black.png";
 //SelectAmount props
 export type SelectAmountProps = {
-  initAmountData: string;
+  initAmountData: number;
   styleColor: string; // black, or white
   //no need function
-  selectData: [];
-  computeData: string;
+  selectMaxData: number;
+  computeData: string | number;
 };
 /**
  * select amount component
@@ -19,13 +19,13 @@ export default function SelectAmount(selectAmountProp: SelectAmountProps) {
     initAmountData: "",
     styleColor: "white", // black or white ,todo  other color
     title: "Slect Amount", // don't allow to updateTitle, maybe later allow
-    selectData: [1, 2, 3, 4, 5], //select data
+    selectMaxData: 2, //select data
     computeData: 0,
   };
   const {
     initAmountData = defaultProps.initAmountData,
     styleColor = defaultProps.styleColor, // black, or white
-    selectData = defaultProps.selectData,
+    selectMaxData = defaultProps.selectMaxData,
     computeData = defaultProps.computeData,
   } = selectAmountProp;
 
@@ -46,48 +46,71 @@ export default function SelectAmount(selectAmountProp: SelectAmountProps) {
     overflow: hidden;
   `;
   const SelectRightNotice = styled.span`
-    font-size: 13px;
+    font-size: 12px;
     font-weight: normal;
     position: absolute;
-    right: 10px;
+    right: 20px;
   `;
   const DataUnit = styled.span`
     font-weight: bold;
+    font-size: 13px;
+    margin-left: 4px;
   `;
 
-  const SelectWrapper = styled.span`
+  const SelectWrapper = styled.div`
+    display:flex;
     border: 1px solid;
     border-color: ${
-      styleColor === "white" ? "rgb(200,206,211)" : "rgb(53,61,69)"
+      styleColor === "white" ? "rgb(222,227,232)" : "rgb(53,61,69)"
     }
-    height:114px;
+    width:100%;
+    margin: 20px 0 10px 0;
+    padding:0 8px 0 8px;
+    height:52px;
     border-radius:8px;
+    align-items:center;
+    position:relative;
   `;
-  const Select = styled.span`
+  const SelectSpan = styled.span`
     font-size: 14px;
     font-weight: bold;
+    margin-left: 8px;
+  `;
+
+  const RightNoticeWrapper = styled.span`
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    display: flex;
+
+    align-items: center;
+    color: ${styleColor === "white" ? "rgb(149,159,170)" : "rgb(73,83,95)"};
+  `;
+  // const rightContent = styled.span`
+  //   font-size: 12px;
+  //   color: ${styleColor === "white" ? "rgb(125,138,151)" : "rgb(87,99,112)"};
+  //   padding-left: 2px;
+  // `;
+  const RightKey = styled.span`
+    font-weight: bold;
+    font-size: 14px;
+    color: ${styleColor === "white" ? "rgb(59,65,70)" : "rgb(231,236,241)"};
+    margin-right: 4px;
+    align-self: center;
+  `;
+  const ButtonWrapper = styled.span`
+    float: right;
+    margin-bottom: 20px;
   `;
   const BottomBtn = styled.button`
    background: ${styleColor === "white" ? "rgb(237,243,249)" : "rgb(43,49,55)"}
     font-size: 12;
-    border-radius: 8px;
+    border-radius: 6px;
+    border:none;
+    padding:6px 8px 6px 8px;
     font-weight: bold;
     margin-left:10px;
     color: ${styleColor === "white" ? "rgb(112,120,135)" : "rgb(99,114,128)"};
-  `;
-  const RightNoticeWrapper = styled.span`
-    position: absolute;
-    right: 10px;
-    display: flex;
-  `;
-  const rightContent = styled.span`
-    font-size: 12px;
-    color: ${styleColor === "white" ? "rgb(125,138,151)" : "rgb(87,99,112)"};
-    padding-left: 2px;
-  `;
-  const RightKey = styled.span`
-    font-weight: bold;
-    font-size: 14px;
   `;
   return (
     <SelectAmount>
@@ -101,23 +124,19 @@ export default function SelectAmount(selectAmountProp: SelectAmountProps) {
       <SelectWrapper>
         <img
           src={styleColor === "white" ? fromWhiteIcon : fromBlackIcon}
-          width={50}
-          height={50}
+          width={34}
+          height={34}
         />
-        <Select>
-          {selectData.map((i) => {
-            return <option>{i}</option>;
-          })}
-        </Select>
+        <SelectSpan>{initAmountData}</SelectSpan>
         <RightNoticeWrapper>
           <RightKey>ATOM</RightKey>≈ &nbsp; ${computeData}
         </RightNoticeWrapper>
       </SelectWrapper>
-      <span>
+      <ButtonWrapper>
         <BottomBtn>Max</BottomBtn>
         <BottomBtn>1/2</BottomBtn>
         <BottomBtn>1/3</BottomBtn>
-      </span>
+      </ButtonWrapper>
     </SelectAmount>
   );
 }

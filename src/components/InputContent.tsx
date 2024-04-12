@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import editWhiteIcon from "../assets/pen-black.png";
-import editBlackIcon from "../assets/pen-white.png";
+import editWhiteIcon from "../assets/pen-white.png";
+import editBlackIcon from "../assets/pen-black.png";
 
 //InputContents props
 export type InputContentsProps = {
@@ -30,39 +30,51 @@ export default function InputContents(inputContentsProp: InputContentsProps) {
   } = inputContentsProp;
 
   const SpanContent = styled.span`
-    background-color: ${styleColor === "white" ? "rgb(236,243,250)" : "rgb(20,21,22)"};
-    width: 100%;
-    read-only:true
-    height: 88px;
+    background-color: ${styleColor === "white"
+      ? "rgb(236,243,250)"
+      : "rgb(20,21,22)"};
+
+    height: 45px;
     border: none;
-    display:flex;
+    display: flex;
     border-radius: 8px;
-    overflow:hidden;
+    position: relative;
+    padding: 3px;
+    align-items: center;
   `;
-  const InputText = styled.input`
+  const InputText = styled.div`
     color: ${styleColor === "white" ? "rgb(115,129,143)" : "rgb(74,84,95)"};
-    font-size: 14px;
+    font-size: 11px;
     text-align: left;
   `;
   const Wrapper = styled.div`
     flex: 2;
     display: flex;
+    flex-direction: column;
   `;
   const Title = styled.div`
     color: ${styleColor === "white" ? "rgb(115,129,143)" : "rgb(74,84,95)"};
-    font-size: 15px;
+    font-size: 13px;
     text-align: left;
     font-weight: bold;
     margin-bottom: 15px;
+  `;
+  const ImgIcon = styled.img`
+    position: absolute;
+    right: 15px;
   `;
   return (
     <Wrapper>
       <Title>{title}</Title>
       <SpanContent>
-        <img src={imgUrl} />
+        <img src={imgUrl} width={28} height={28} />
         <InputText>{content}</InputText>
         {hasEdit ? (
-          <img src={styleColor === "white" ? editWhiteIcon : editBlackIcon} />
+          <ImgIcon
+            width={18}
+            height={18}
+            src={styleColor === "white" ? editWhiteIcon : editBlackIcon}
+          />
         ) : null}
       </SpanContent>
     </Wrapper>

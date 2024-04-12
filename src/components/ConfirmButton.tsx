@@ -3,9 +3,9 @@ import Button from "./Button";
 // confirm button props
 export type ConfirmButtonProps = {
   //confirm button text
-  confirmText: string;
+  confirmText?: undefined | string;
   // cancel button text
-  cancelText: string;
+  cancelText?: undefined | string;
   // Theme color: black, or white
   styleColor: string;
 };
@@ -29,18 +29,20 @@ export default function ConfirmButton(buttonProp: ConfirmButtonProps) {
     styleColor: confirmColor,
     fontWeight: fontWeight,
     fontColor: confirmColor,
-    fontSize: 30,
+    fontSize: 15,
   };
+
   const cancelButton = {
     buttonText: buttonProp.cancelText || defaultProps.cancelText,
     styleColor:
-      buttonProp.styleColor || defaultProps.styleColor === "white"
+      (buttonProp.styleColor || defaultProps.styleColor) === "white"
         ? "black"
         : "white",
     fontWeight: !fontWeight,
-    fontSize: 26,
+    fontSize: 13,
     fontColor: "rgb(110,125,139)",
   };
+
   return (
     <>
       <Button {...confirmButton}></Button>

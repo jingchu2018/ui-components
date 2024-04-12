@@ -3,20 +3,21 @@
 use umi framework for compile and debug
 support chrome brower
 
-recommend use pnpm,pnpm install as flowing
+#### 1. recommend install pnpm
 
 `curl -fsSL https://get.pnpm.io/install.sh | sh -`
 
-download the code to the root directory
+Download the code to the root directory
 
-run the project
+#### 2. Run the project
 
 `pnpm run dev`
 
-Then  you can see on your local computer
-http://localhost:8000/
+#### 3. Then  you can see on your local computer
 
-Files you can see:
+` http://localhost:8000/ `
+
+#####  Files:
 
 ```
 

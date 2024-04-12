@@ -46,7 +46,7 @@ Files you can see:
 │   ├── layouts
 │   │   └── index.tsx // layouts
 │   └── pages
-│       └── index.tsx // entry file for test  or see result
+│       └── index.tsx // entry file for seeing result
 ├── tsconfig.json
 └── typings.d.ts
 

@@ -30,7 +30,7 @@ export default function Button(buttonProp: ButtonProps) {
   } = buttonProp;
 
   const Button = styled.button`
-    background-color: ${styleColor === "white" ? "black" : "white"};
+    background-color: ${styleColor === "white" ? "rgb(43,49,55)" : "white"};
     color: ${fontColor};
     font-size: ${fontSize}px;
     text-align: center;

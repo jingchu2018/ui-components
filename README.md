@@ -3,9 +3,11 @@
 use umi framework for compile and debug
 support chrome brower
 
-#### 1. recommend install pnpm
+#### 1. recommend install pnpm and run install
 
 `curl -fsSL https://get.pnpm.io/install.sh | sh -`
+
+`pnpm install`
 
 Download the code to the root directory
 
